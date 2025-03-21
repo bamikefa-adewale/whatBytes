@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { MobileSidebar } from "./MobileSidebar";
 
 export const Header = () => {
   const profile =
@@ -7,7 +8,9 @@ export const Header = () => {
   const logo =
     "https://res.cloudinary.com/dbrub0d6r/image/upload/v1742487684/whatbytesLogo_oz2htv.jpg";
   return (
-    <header className="border-b flex items-center justify-between px-6 py-3 ">
+    <header className="border-b flex items-center justify-between sm:gap-10 lg:px-6 px-2 py-3 ">
+      <MobileSidebar />
+
       <div className="flex items-center gap-2 cursor-pointer">
         <div className="font-bold text-2xl flex items-center">
           <div className="flex flex-col items-center mr-2">
@@ -17,7 +20,7 @@ export const Header = () => {
         </div>
       </div>
       <div className="flex items-center gap-2">
-        <div className="flex items-center gap-2 cursor-pointer border border-2 rounded-xl  p-2">
+        <div className="flex items-center gap-2 cursor-pointer  border-2 rounded-xl  p-2">
           <div className="h-8 w-8 rounded-full overflow-hidden">
             <Image
               src={profile}
@@ -27,7 +30,7 @@ export const Header = () => {
               className="object-cover"
             />
           </div>
-          <span className="font-semibold ">Rahil Siddique</span>
+          <span className="font-semibold hidden md:block ">Rahil Siddique</span>
         </div>
       </div>
     </header>
