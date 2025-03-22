@@ -3,6 +3,13 @@ import React from "react";
 import { syllabusData } from "../../constants/syllabusData";
 
 export const SyllabusAnalysis = () => {
+  const colorMap: Record<string, string> = {
+    blue: "text-blue-500",
+    orange: "text-orange-500",
+    red: "text-red-500",
+    green: "text-green-500",
+  };
+
   return (
     <Card>
       <div className="p-4">
@@ -11,18 +18,25 @@ export const SyllabusAnalysis = () => {
           {syllabusData.map(({ id, topic, percentage, color }) => (
             <div key={id} className="py-2">
               <span className="text-sm md:text-base">{topic}</span>
-              <div className="flex items-center gap-10 justify-between mb-1">
-                <div
-                  className={`h-4 w-full bg-${color}-100 rounded-full overflow-hidden`}
-                >
+
+              <div className="flex items-center justify-between">
+                {/* Progress Bar Container */}
+                <div className="flex-1 h-4 bg-gray-200 rounded-full mt-1 overflow-hidden relative">
+                  {/* Progress Bar */}
                   <div
-                    className={`h-full bg-${color}-500 rounded-full`}
-                    style={{ width: `${percentage}%` }}
+                    className="absolute top-0 left-0 h-full rounded-full"
+                    style={{
+                      width: `${percentage}%`,
+                      backgroundColor: `${color}`,
+                    }}
                   ></div>
                 </div>
-                <span className={`text-${color}-500 text-sm md:text-base`}>
+                {/* Percentage Text with Dynamic Color */}
+                <div
+                  className={`w-20 flex items-center justify-end ${colorMap[color]} text-xs font-medium`}
+                >
                   {percentage}%
-                </span>
+                </div>
               </div>
             </div>
           ))}

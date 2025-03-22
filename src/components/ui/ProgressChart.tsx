@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Label,
   PolarGrid,
@@ -24,8 +22,10 @@ const chartConfig = {
     color: "#2563EB", // Ensure consistent blue color
   },
 } satisfies ChartConfig;
+
 const Shot_Arrow =
   "https://res.cloudinary.com/dbrub0d6r/image/upload/v1742507161/Arrow_vyskgk.png";
+
 export const ProgressChart = () => {
   return (
     <ChartContainer
@@ -56,11 +56,18 @@ export const ProgressChart = () => {
         <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
           <Label
             content={({ viewBox }) => {
-              if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+              // Type guard to check if viewBox is of type PolarViewBox
+              if (
+                viewBox &&
+                "cx" in viewBox &&
+                "cy" in viewBox &&
+                typeof viewBox.cx === "number" &&
+                typeof viewBox.cy === "number"
+              ) {
                 return (
                   <foreignObject
-                    x={viewBox.cx - 15} 
-                    y={viewBox.cy - 15} 
+                    x={viewBox.cx - 15}
+                    y={viewBox.cy - 15}
                     width="40"
                     height="40"
                   >
@@ -69,11 +76,14 @@ export const ProgressChart = () => {
                       alt="shot arrow"
                       width={40}
                       height={40}
-                      className="mx-auto "
+                      className="mx-auto"
                     />
                   </foreignObject>
                 );
               }
+
+              // Return null or a fallback if viewBox is not of type PolarViewBox
+              return null;
             }}
           />
         </PolarRadiusAxis>
