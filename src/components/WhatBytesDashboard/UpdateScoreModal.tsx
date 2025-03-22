@@ -12,7 +12,7 @@ import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import { inputFields } from "../../constants/inputFields";
 import { useEffect } from "react";
-import { useScore } from "@/app/contexts/hooks/useScore";
+import { useScore } from "@/contexts/hooks/useScore";
 import { CustomButton } from "../ui/CustomButton";
 import { CustomInput } from "../ui/CustomInput";
 

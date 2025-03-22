@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useScore } from "@/app/contexts/hooks/useScore";
+import { useScore } from "@/contexts/hooks/useScore";
 import { ProgressChart } from "../ui/ProgressChart";
 
 export const QuestionAnalysis = () => {

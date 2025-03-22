@@ -1,5 +1,5 @@
 "use client";
-import { useScore } from "@/app/contexts/hooks/useScore";
+import { useScore } from "@/contexts/hooks/useScore";
 import { Card, CardContent } from "@/components/ui/card";
 import { BarChart3 } from "lucide-react";
 import React from "react";
@@ -27,7 +27,6 @@ export const ComparisonGraph = () => {
           </p>
         </div>
         <div className="">
-         
           <ComparisonChart />
         </div>
       </CardContent>

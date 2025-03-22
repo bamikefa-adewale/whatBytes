@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
 import { ReactNode } from "react";
 import { CalendarMinus2, SquareCheck, Trophy } from "lucide-react";
-import { useScore } from "@/app/contexts/hooks/useScore";
+import { useScore } from "@/contexts/hooks/useScore";
 
 export const Statistics = () => {
   const { scores } = useScore();

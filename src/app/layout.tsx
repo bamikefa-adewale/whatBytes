@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { ScoreProvider } from "./contexts/ScoreContext";
+import { ScoreProvider } from "../contexts/ScoreContext";
 import { Header } from "../components/WhatBytesDashboard/Header";
 
 const geistSans = Geist({
