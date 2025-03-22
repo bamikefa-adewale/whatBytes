@@ -42,7 +42,7 @@ export const Statistics = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {stats.map((item, index) => (
             <div key={index} className="flex items-center gap-4 p-4 border-r ">
-              <div className="rounded-full bg-gray-200 p-5">{item.icon}</div>
+              <div className="rounded-full bg-gray-100 p-5">{item.icon}</div>
               <div>
                 <div className="text-xl md:text-2xl font-bold mb-2">
                   {item.value}
